@@ -14,6 +14,10 @@ counter=0
 
 
 while 1:
-    ser.write(b'%d' % (counter))
+    x = b'hello world\n'
+    ser.write(x)
+    print x
     time.sleep(0.05)
-    counter += 1
+    counter+= 1
+    if(ser.in_waiting > 0):
+        print ser.readline()
