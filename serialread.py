@@ -13,6 +13,6 @@ counter=0
 while 1:
     if (ser.in_waiting > 0):
         x = ser.read(1)
-        print (x)
-        # print ("Sending : %d Back" % x + 1)
-        # ser.write(1)
+        print ("Just Received : %d" % x)
+        print ("Sending : %d Back" % x + 1)
+        ser.write(1)
