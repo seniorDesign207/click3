@@ -14,6 +14,6 @@ counter=0
 
 
 while 1:
-    	ser.write(b'%d' % (counter))
-        time.sleep(0.05)
-        counter += 1
+    ser.write(b'%d' % (counter))
+    time.sleep(0.05)
+    counter += 1
