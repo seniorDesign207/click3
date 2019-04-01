@@ -10,14 +10,15 @@ ser = serial.Serial(
     bytesize=serial.EIGHTBITS,
     timeout=1
 )
-counter=0
 
-
+i = 0
 while 1:
-    x = b'hello world\n'
-    ser.write(x)
-    print(x)
+    if i > 9:
+        i = 0
+    ser.write(b'%d' % (i))
+
     time.sleep(0.05)
-    counter+= 1
+    i += 1
     if(ser.in_waiting > 0):
-        print(ser.readline())
+        x = ser.read(1)
+        print ("Sent : %d || Received : %d" % int(i), int(x))
